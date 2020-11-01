@@ -1,6 +1,6 @@
-#Imports and configuration
 import tkinter as tk
 import webbrowser
+import cvimages as cvi
 
 font = "Cambria"  # Font
 col1 = "#008784"  # General background & buttons
@@ -39,7 +39,7 @@ def display_profile(start=1):
     global img
     canvas = tk.Canvas(master=img_frame, width=250, height=250, bg=col2)
     canvas.grid(column=0, row=0, sticky="e")
-    img = tk.PhotoImage(file="pasfoto.gif")
+    img = tk.PhotoImage(data=cvi.pasfoto_string)
     canvas.create_image(0,0, image=img, anchor="nw")
     
     if language == 0: # Dutch
@@ -591,13 +591,13 @@ def create_frame_menu():
     canvas_nl = tk.Canvas(master=frame_flags, width=60, height=35, relief=tk.RAISED, borderwidth=3, 
                           bg=col2)
     canvas_nl.grid(column=0, row=0, padx=(0,7))
-    img_nl = tk.PhotoImage(file="nl.gif")
+    img_nl = tk.PhotoImage(data=cvi.nl_string)
     canvas_nl.create_image(5,5, image=img_nl, anchor="nw")
 
     canvas_en = tk.Canvas(master=frame_flags, width=60, height=35, relief=tk.RAISED, borderwidth=3, 
                           bg=col2)
     canvas_en.grid(column=1, row=0, padx=(7,0))
-    img_en = tk.PhotoImage(file="uk.gif")
+    img_en = tk.PhotoImage(data=cvi.uk_string)
     canvas_en.create_image(5,5, image=img_en, anchor="nw")
 
     # Flag buttons
@@ -605,7 +605,7 @@ def create_frame_menu():
         global language
         language = input
         window_title()
-        create_frame_menu() # Recursion
+        create_frame_menu() # Recursion!
         clear_frame()
         last_pressed()
 
@@ -654,4 +654,3 @@ create_frame_menu()
 create_frame_info()
 display_profile(start=0)
 window.mainloop()
-
