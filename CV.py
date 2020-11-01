@@ -9,6 +9,7 @@ col3 = "white"    # Titles
 col4 = "white"    # Text
 
 window = tk.Tk()
+window.iconphoto(False, tk.PhotoImage(data=cvi.icon_string))
 window.resizable(False, False)
 window.columnconfigure(1, weight=1)
 window.rowconfigure(0, weight=1)
