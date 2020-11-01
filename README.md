@@ -1,4 +1,4 @@
-Dutch:
+Nederlands:
 Mijn CV in applicatie-vorm, geschreven in Python. Als Windows een waarschuwing geeft, kun je de applicatie toch runnen door op 'meer info' te klikken.
 
 English:
